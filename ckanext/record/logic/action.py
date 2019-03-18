@@ -91,4 +91,3 @@ def record_search(context, data_dict):
     result = solr.search(query.to_dict())
 
     return result
-

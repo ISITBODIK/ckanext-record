@@ -89,7 +89,7 @@ class RecordPlugin(plugins.SingletonPlugin):
 
     '''
     IOrganizationController
-    
+
     read(entity)
         Called after IOrganizationController.before_view inside organization_read.
 
@@ -104,7 +104,7 @@ class RecordPlugin(plugins.SingletonPlugin):
 
     before_view(pkg_dict)
         Extensions will recieve this before the organization gets displayed. The dictionary passed will be the one that gets sent to the template.
-    
+
     To Do: 組織名を修正したとき、インデックスの値を更新する必要あり。
     '''
 
@@ -126,7 +126,7 @@ class RecordPlugin(plugins.SingletonPlugin):
 
     def after_update(self, context, data_dict):
         if _is_resource(data_dict):
-            # data_dict['force'] = True
+            data_dict['force'] = True
             toolkit.get_action('record_update')(context, data_dict)
         else:
             pkg_dict = toolkit.get_action('package_show')(context, data_dict)
