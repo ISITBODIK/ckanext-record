@@ -44,11 +44,11 @@ To install ckanext-record:
 
 5. Create a Solr Core::
 
-     docker exec -it solr bin/solr create -c record
+     solr create -c record
 
 6. Initialize the database::
 
-     docker exec -it ckan-dev paster --plugin=ckanext-record init -c /srv/app/production.ini
+     paster --plugin=ckanext-record init -c /srv/app/production.ini
 
 
 ------------------------
