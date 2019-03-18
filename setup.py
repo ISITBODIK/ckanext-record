@@ -21,7 +21,7 @@ setup(
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com//ckanext-record',
+    url='https://github.com/ISITBODIK/ckanext-record',
 
     # Author details
     author='''BODIK''',
@@ -84,10 +84,10 @@ setup(
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
-        
+
         [paste.paster_command]
         init = ckanext.record.paster:InitCommand
-        
+
     ''',
 
     # If you are changing from the default layout of your extension, you may
