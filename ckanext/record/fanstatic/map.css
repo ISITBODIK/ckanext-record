@@ -1,0 +1,90 @@
+
+.map-content {
+    padding: 0px;
+    min-height: 600px;
+    background-color: #cccccc;
+}
+
+#mapid {
+    border: 1px solid #cccccc;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    min-height: 600px;
+    height: 100%;
+}
+
+aside.secondary {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+section.record-info {
+    height: 100%;
+    width: 100%;
+}
+
+section.record-info > .module-heading {
+    padding: 10px;
+    border-radius: 3px 0 0 0;
+    height: 56px;
+}
+
+section.record-info > .module-content {
+    position: absolute;
+    top: 56px;
+    bottom: 0;
+    padding: 0;
+}
+
+ul.nav-tabs{
+    height: 52px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.module-content > .tab-content {
+    display: block;
+}
+
+nav.scroll {
+    position: absolute;
+    top: 52px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: scroll;
+    /*margin-bottom: 10px;*/
+}
+
+.resource-name {
+    font-size: small;
+}
+
+.resource-format {
+    margin-right: 10px;
+}
+
+.record-count.active {
+    background-color: orangered;
+}
+
+
+/*nav.resource-nav {*/
+/*position: absolute;*/
+/*bottom: 0;*/
+/*width: 100%;*/
+/*text-align:  center;*/
+/*}*/
+
+/*nav.resource-nav > ul.pagination{*/
+/*margin: 0px;*/
+/*padding: 0px;*/
+/*margin-bottom: 5px;*/
+/*!*position: absolute;*!*/
+/*!*margin-top: 10px;*!*/
+
+/*}*/
+

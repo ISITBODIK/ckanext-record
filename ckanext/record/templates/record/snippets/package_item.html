@@ -1,0 +1,33 @@
+{% extends "snippets/package_item.html" %}
+
+{% block content %}
+
+{{ super() }}
+{% resource 'record/search.js' %}
+{% resource 'record/search.css' %}
+
+{% endblock %}
+
+{% block heading %}
+<h3 class="dataset-heading">
+    {% block heading_private %} {{ super() }} {% endblock %}
+    {% block heading_title %} {{ super() }} {% endblock %}
+    {% block heading_meta %} {{ super() }} {% endblock %}
+</h3>
+{% endblock %}
+
+
+{% block resources %}
+
+<div class="dataset-records"
+     data-module="ckanext-record-search"
+     data-module-q="{{q}}"
+     data-module-pacakge_id="{{ package.id }}"
+     data-module-resources="{{ resources }}"
+>
+
+    <div class="list-group"></div>
+
+</div>
+
+{% endblock %}

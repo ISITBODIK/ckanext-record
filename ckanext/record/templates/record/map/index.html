@@ -1,0 +1,86 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Map') }}{% endblock %}
+
+{% block breadcrumb_content %}
+<li class="active">{% link_for _('Map'), named_route='record_map_index' %}</li>
+{% endblock %}
+
+{% block secondary_content %}
+
+<section class="record-info"
+         data-module="ckanext-record-map"
+         data-module-q="{{q}}"
+>
+
+    <div class="module-heading">
+
+        <div class="section site-search simple-input">
+            <div class="field">
+                <label for="field-sitewide-search">
+                    {% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}
+                </label>
+
+                <input id="sidebar-search" type="text" class="form-control"
+                       placeholder="{{ _('Search') }}" value="{{q}}"/>
+
+                <button class="btn-search" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="module-content">
+
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="#point-tab" data-toggle="tab">Points</a></li>
+            <li><a href="#polygon-tab" data-toggle="tab">Polygons</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="point-tab">
+                <nav class="scroll">
+                    <ul id="resource-points" class="list-unstyled nav nav-simple"></ul>
+                </nav>
+            </div>
+            <div class="tab-pane" id="polygon-tab">
+                <nav>
+                    <ul id="resource-polygons" class="list-unstyled nav nav-simple"></ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block primary %}
+<div class="primary col-sm-9 col-xs-12 map-content">
+    <div id="mapid"></div>
+</div>
+{% endblock %}
+
+
+{% block styles %}
+{{ super() }}
+
+{% resource 'record/vendor/leaflet/leaflet.css' %}
+{% resource 'record/vendor/leaflet/leaflet.awesome-markers.css' %}
+{% resource 'record/map.css' %}
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+
+{% resource 'record/vendor/jquery.greenify.js' %}
+{% resource 'record/vendor/jquery.cookie.js' %}
+{% resource 'record/vendor/leaflet/leaflet.js' %}
+{% resource 'record/vendor/leaflet/leaflet.awesome-markers.js' %}
+
+{% resource 'record/vendor/wellknown.js' %}
+
+{% resource 'record/map.js' %}
+
+{% endblock%}

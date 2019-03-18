@@ -1,0 +1,11 @@
+{% extends "snippets/package_list.html" %}
+
+{% block package_list_inner %}
+{% for package in packages %}
+
+{% set resources = resource_filter(package.resources) %}
+
+{% snippet 'record/snippets/package_item.html', package=package, item_class=item_class, resources=resources,
+    hide_resources=hide_resources, banner=banner, truncate=truncate, truncate_title=truncate_title, q=q %}
+{% endfor %}
+{% endblock %}
