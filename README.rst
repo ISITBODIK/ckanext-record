@@ -42,23 +42,13 @@ To install ckanext-record:
 
      sudo service apache2 reload
 
-5. Create a Solr Core
+5. Create a Solr Core::
 
      docker exec -it solr bin/solr create -c record
 
-6. Initialize the database
+6. Initialize the database::
 
      docker exec -it ckan-dev paster --plugin=ckanext-record init -c /srv/app/production.ini
-
----------------
-Config Settings
----------------
-
-Document any optional config settings here. For example::
-
-    # The minimum number of hours to wait before re-checking a resource
-    # (optional, default: 24).
-    ckanext.record.some_setting = some_default_value
 
 
 ------------------------
