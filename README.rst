@@ -1,33 +1,3 @@
-.. You should enable this project on travis-ci.org and coveralls.io to make
-   these badges work. The necessary Travis and Coverage config files have been
-   generated for you.
-
-.. image:: https://travis-ci.org//ckanext-record.svg?branch=master
-    :target: https://travis-ci.org//ckanext-record
-
-.. image:: https://coveralls.io/repos//ckanext-record/badge.svg
-  :target: https://coveralls.io/r//ckanext-record
-
-.. image:: https://pypip.in/download/ckanext-record/badge.svg
-    :target: https://pypi.python.org/pypi//ckanext-record/
-    :alt: Downloads
-
-.. image:: https://pypip.in/version/ckanext-record/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-record/
-    :alt: Latest Version
-
-.. image:: https://pypip.in/py_versions/ckanext-record/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-record/
-    :alt: Supported Python versions
-
-.. image:: https://pypip.in/status/ckanext-record/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-record/
-    :alt: Development Status
-
-.. image:: https://pypip.in/license/ckanext-record/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-record/
-    :alt: License
-
 =============
 ckanext-record
 =============
@@ -61,7 +31,8 @@ To install ckanext-record:
 
 2. Install the ckanext-record Python package into your virtual environment::
 
-     pip install ckanext-record
+     cd <ckanext-record path> && pip install -r requirements.txt && pip install --editable ."
+
 
 3. Add ``record`` to the ``ckan.plugins`` setting in your CKAN
    config file (by default the config file is located at
@@ -71,6 +42,13 @@ To install ckanext-record:
 
      sudo service apache2 reload
 
+5. Create a Solr Core
+
+     docker exec -it solr bin/solr create -c record
+
+6. Initialize the database
+
+     docker exec -it ckan-dev paster --plugin=ckanext-record init -c /srv/app/production.ini
 
 ---------------
 Config Settings
