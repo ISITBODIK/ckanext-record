@@ -30,6 +30,7 @@ To install ckanext-record:
      . /usr/lib/ckan/default/bin/activate
 
 2. Install the ckanext-record Python package into your virtual environment::
+
      git clone https://github.com/ISITBODIK/ckanext-record.git
      cd ckanext-record
      pip install -r requirements.txt
