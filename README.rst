@@ -48,7 +48,7 @@ To install ckanext-record:
 
 6. Initialize the database::
 
-     paster --plugin=ckanext-record init -c /srv/app/production.ini
+     paster --plugin=ckanext-record init -c production.ini
 
 
 ------------------------
